@@ -24,7 +24,7 @@ cd MimicMotions/MeshGraphormer
 pip install ./manopth/.
 bash scripts/download_models.sh
 ```
-The MeshGraphormer/models should be organized as follows
+The `MeshGraphormer/models` should be organized as follows
 
 ```
 models/
@@ -41,19 +41,26 @@ If you experience connection issues with Hugging Face, you can utilize the mirro
 Please download weights manually as follows:
 ```
 cd MimicMotions/
+mkdir -p models/DWPose
 ```
 1. Download DWPose pretrained model: [dwpose](https://huggingface.co/yzd-v/DWPose/tree/main)
     ```
-    cd models/DWPose
     wget https://huggingface.co/yzd-v/DWPose/resolve/main/yolox_l.onnx?download=true -O models/DWPose/yolox_l.onnx
     wget https://huggingface.co/yzd-v/DWPose/resolve/main/dw-ll_ucoco_384.onnx?download=true -O models/DWPose/dw-ll_ucoco_384.onnx
     ```
-2. Download the pre-trained checkpoint of MimicMotion from [Huggingface](https://huggingface.co/ixaac/MimicMotion) and download the weights after retraining on tiktok data [Weights](https://pan.quark.cn/s/db4616a14ef3).
+
+2. The SVD model can be downloaded form [stabilityai/stable-video-diffusion-img2vid-xt-1-1](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt-1-1).
+    ```
+    git lfs install
+    git clone https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt-1-1
+    mkdir -p models/SVD
+    mv stable-video-diffusion-img2vid-xt-1-1 models/SVD/
+    ```
+
+3. Download the pre-trained checkpoint of MimicMotion from [Huggingface](https://huggingface.co/ixaac/MimicMotion) and download the weights after retraining on tiktok data [Weights](https://pan.quark.cn/s/db4616a14ef3).
     ```
     wget -P models/ https://huggingface.co/ixaac/MimicMotion/resolve/main/MimicMotion_1-1.pth
     ```
-3. The SVD model can be downloaded form [stabilityai/stable-video-diffusion-img2vid-xt-1-1](https://huggingface.co/stabilityai/stable-video-diffusion-img2vid-xt-1-1).
-
 
 4. Note that if openai/clip-vit-large-patch14 does not load, download it from [clip-vit-large-patch14](https://huggingface.co/openai/clip-vit-large-patch14).
 
