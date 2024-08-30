@@ -1,0 +1,38 @@
+# base svd model path
+base_model_path: models/SVD/stable-video-diffusion-img2vid-xt-1-1
+output_dir: outputs/
+log_file: None
+# checkpoint path
+# ckpt_path: models/MimicMotion.pth
+
+test_case:
+- ref_video_path: assets/test_data/videos/test3.mp4
+  ref_image_path: assets/test_data/images/demo11.jpg
+  ref_hand_path: assets/test_data/videos_dwhand/test3.mp4
+  ref_hand_mask_path: assets/test_data/videos_dwmask/test3.mp4
+  images_depth_path: assets/test_data/images_depth/demo11_depth.jpg
+  images_mask_path: assets/test_data/images_mask/demo11_mask.jpg
+  num_frames: 16
+  resolution: 576
+  frames_overlap: 6
+  num_inference_steps: 25
+  noise_aug_strength: 0
+  guidance_scale: 2.0
+  sample_stride: 2
+  fps: 15
+  seed: 42
+- ref_video_path: assets/test_data/videos/test4.mp4
+  ref_image_path: assets/test_data/images/demo11.jpg
+  ref_hand_path: assets/test_data/videos_dwhand/test2.mp4
+  ref_hand_mask_path: assets/test_data/videos_dwmask/test2.mp4
+  images_depth_path: assets/test_data/images_depth/demo11_depth.jpg
+  images_mask_path: assets/test_data/images_mask/demo11_mask.jpg
+  num_frames: 16
+  resolution: 576
+  frames_overlap: 6
+  num_inference_steps: 25
+  noise_aug_strength: 0
+  guidance_scale: 2.0
+  sample_stride: 2
+  fps: 15
+  seed: 42

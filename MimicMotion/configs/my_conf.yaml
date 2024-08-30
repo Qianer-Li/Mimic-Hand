@@ -1,0 +1,41 @@
+base_model_path: models/SVD/stable-video-diffusion-img2vid-xt-1-1
+ckpt_path: models/MimicMotion.pth
+stage2_path: models/motion_module-2400.pth
+control_stage_config:
+  image_size: 32
+  in_channels: 4
+  hint_channels: 3
+  model_channels: 320
+  attention_resolutions:
+  - 4
+  - 2
+  - 1
+  num_res_blocks: 2
+  channel_mult:
+  - 1
+  - 2
+  - 4
+  - 4
+  num_heads: 8
+  use_spatial_transformer: true
+  transformer_depth: 1
+  context_dim: 768
+  use_checkpoint: true
+  legacy: false
+  use_fp16: false
+test_case:
+- ref_video_path: assets/test_data/videos/test5.mp4
+  ref_image_path: assets/test_data/images/demo3.jpg
+  ref_hand_path: assets/test_data/videos_dwhand/test5.mp4
+  ref_hand_mask_path: assets/test_data/videos_dwmask/test5.mp4
+  images_depth_path: assets/test_data/images_depth/demo3_depth.jpg
+  images_mask_path: assets/test_data/images_mask/demo3_mask.jpg
+  num_frames: 16
+  resolution: 576
+  frames_overlap: 6
+  num_inference_steps: 25
+  noise_aug_strength: 0
+  guidance_scale: 2.0
+  sample_stride: 2
+  fps: 15
+  seed: 42
