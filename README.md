@@ -80,7 +80,7 @@ models/
 
 ### Test
 
-For the test, go to `test_run.ipynb` and sequentially generate the hand depth map features of the video and reference images. Demos are in `MimicMotion/assets/test_data` and `MimicMotion/outputs` are in outputs (For the same sample, one is the original model and the other is the improved model). 
+For the test, go to `test_run.ipynb` and sequentially generate the hand depth map features of the video and reference images. Demos are in `MimicMotion/assets/test_data` and `outputs` are in outputs (For the same sample, one is the original model and the other is the improved model). 
 
 
 ## Citation	
